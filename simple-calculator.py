@@ -14,7 +14,6 @@ def menu_system():
     print("4. division")
     
     while True:
-        
         choice = int(input("Please enter your choice: "))
       
         if choice == 1:
@@ -34,15 +33,16 @@ def menu_system():
         
     return choice
 
-def addition(choice):
- 
+def addition(choice, num1, num2):
+    
     if choice == 1:
         num1 = int(input("please enter the first number:"))
         num2 = int(input("please enter the second number:"))
         total = num1 + num2
         print("The result of adding", num1, "and", num2, "is", total)
+    
 
-def subtraction(choice):
+def subtraction(choice, num1, num2):
     
     if choice == 2:
         num1 = int(input("please enter the first number:")) 
