@@ -8,6 +8,7 @@ honda = 2
 toyota = 3
 
 def choose_car():
+    
     print("Welcome to our car rental service!")
     print("Please select a car brand:")
     print("1. Ford")
@@ -28,8 +29,7 @@ def choose_car():
             break
         else:
             print("Invalid choice (please select 1, 2, or 3)")
-            continue
-
+        
     return choice
 
 choice = choose_car()
