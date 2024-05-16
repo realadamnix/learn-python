@@ -34,24 +34,25 @@ def choose_car():
 
 choice = choose_car()
 
-def calculate_total_cost(choice, days):
+def calculate_total_cost(choice, days, tax=0.2):
+    
     
     if choice == ford:
         print("The cost of renting a Ford is $20 per day")
-        total = days * 20
+        total = days * 20 * (1 + tax) 
         print("The total cost of renting a Ford for", days, "days is $", total)
         
     elif choice == honda:
         print("The cost of renting a Honda is $25 per day")
-        total = days * 25
+        total = days * 25 * (1 + tax)
         print("The total cost of renting a Honda for", days, "days is $", total)
         
     elif choice == toyota:
         print("The cost of renting a Toyota is $30 per day")
-        total = days * 30
+        total = days * 30  * (1 + tax)
         print("The total cost of renting a Toyota for", days, "days is $", total)
 
-days = int(input("How many days would you like to rent the car for?: "))
+days = int(input("Please enter the number of days you would like to rent the car for (20% tax): "))
 
 calculate_total_cost(choice, days)
 
