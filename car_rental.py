@@ -32,9 +32,11 @@ def choose_car():
         
     return choice
 
+
+
 choice = choose_car()
 
-def calculate_total_cost(choice, days, tax=0.2):
+def calculate_total_cost(tax=0.2):
     
     
     if choice == ford:
@@ -54,6 +56,6 @@ def calculate_total_cost(choice, days, tax=0.2):
 
 days = int(input("Please enter the number of days you would like to rent the car for (20% tax): "))
 
-calculate_total_cost(choice, days)
+calculate_total_cost()
 
 print("Thank you for using our car rental service!")
