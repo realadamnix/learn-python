@@ -4,16 +4,19 @@ copyright: Adam Nix (2024)
 """
 
 ford = 1
+ford_name = "Ford"
 honda = 2
+honda_name = "Honda"
 toyota = 3
+toyota_name = "Toyota"
 
-def choose_car():
+def choose_car() -> int:
     
     print("Welcome to our car rental service!")
     print("Please select a car brand:")
-    print("1. Ford")
-    print("2. Honda")
-    print("3. Toyota")
+    print(f"{ford}. {ford_name}")
+    print(f"{honda}. {honda_name}")
+    print(f"{toyota}. {toyota_name}")
 
     while True:
         choice = int(input("Please enter your choice: "))
@@ -33,7 +36,6 @@ def choose_car():
     return choice
 
 
-
 choice = choose_car()
 
 def calculate_total_cost(tax=0.2):
@@ -41,7 +43,7 @@ def calculate_total_cost(tax=0.2):
     
     if choice == ford:
         print("The cost of renting a Ford is $20 per day")
-        total = days * 20 * (1 + tax) 
+        total = days * 20 * (1 + tax)
         print("The total cost of renting a Ford for", days, "days is $", total)
         
     elif choice == honda:
