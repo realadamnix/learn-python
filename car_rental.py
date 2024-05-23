@@ -1,51 +1,69 @@
 """
-This program allows the user to select a car brand (Ford, Honda, or Toyota) and the number of days they would like to rent the car for. The program then calculates the total cost of renting the car based on the selected brand and number of days.
-copyright: Adam Nix (2024)
+This program allows the user to select a car brand (Ford, Honda, or Toyota) and the number of
+days they would like to rent the car for. The program then calculates the total cost of renting
+the car based on the selected brand and number of days.
+Copyright: Adam Nix (2024)
 """
 
-car_names = ["Ford", "Honda", "Toyota"]
-car_costs = [20, 25, 30]
+from types import SimpleNamespace
+
+ford = SimpleNamespace(id=1, name="Ford", cost=20)
+honda = SimpleNamespace(id=2, name="Honda", cost=25)
+toyota = SimpleNamespace(id=3, name="Toyota", cost=30)
+
+cars = [ford, honda, toyota]
 
 
-def choose_car() -> int:
+def choose_car():
+    """
+    This function displays a list of car brands and asks the user to select a car brand.
+    The function then returns the selected car brand.
+    Extended description of function.
+
+
+    Returns:
+        _type_: _description_
+    """
 
     print("Welcome to our car rental service!")
     print("Please select a car brand:")
-    for index, car in enumerate(car_names):
-        print(f"{index+1}. {car}")
+    for car in cars:
+        print(f"{car.id}. {car.name}")
 
     while True:
         choice = int(input("Please enter your choice: "))
         if choice <= 0 or choice > 3:
             print("Invalid choice (please select 1, 2, or 3)")
         else:
-            print(f"You have selected {car_names[choice-1]}")
-            return choice
+            return cars[choice - 1]
 
 
-def calculate_total_cost(days, choice, tax=0.2):
+def calculate_total_cost(days, car, tax=0.2):
+    """Calculate the total cost of renting a car for a given number of days.
 
-    print(
-        f"The cost of renting a {car_names[choice-1]} is ${car_costs[choice-1]} per day"
-    )
-    total = days * car_costs[choice - 1] * (1 + tax)
-    print(
-        f"The total cost of renting a {car_names[choice-1]} for {days} days is ${total}"
-    )
+    Args:
+        days (_type_): _description_
+        car (_type_): _description_
+        tax (float, optional): _description_. Defaults to 0.2.
+    """
+    print(f"The cost of renting a {car.name} is ${car.cost} per day")
+    total = days * car.cost * (1 + tax)
+    print(f"The total cost of renting a {car.name} for {days} days is ${total}")
 
 
 def main():
-    choice = choose_car()
+    """Main function of the program."""
+    car = choose_car()
+    print(f"You have selected {car.name}")
     days = int(
         input(
             "Please enter the number of days you would like to rent the car for (20% tax): "
         )
     )
-    calculate_total_cost(days, choice)
+    calculate_total_cost(days, car)
 
     print("Thank you for using our car rental service!")
 
 
 if __name__ == "__main__":
     main()
-           
