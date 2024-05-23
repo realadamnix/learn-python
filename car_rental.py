@@ -23,22 +23,19 @@ def choose_car() -> int:
 
         if choice == ford:
             print("You have selected Ford")
-            break
+            return choice
         elif choice == honda:
             print("You have selected Honda")
-            break
+            return choice
         elif choice == toyota:
             print("You have selected Toyota")
-            break
+            return choice
         else:
             print("Invalid choice (please select 1, 2, or 3)")
         
-    return choice
 
 
-choice = choose_car()
-
-def calculate_total_cost(tax=0.2):
+def calculate_total_cost(days, choice, tax=0.2):
     
     
     if choice == ford:
@@ -56,8 +53,13 @@ def calculate_total_cost(tax=0.2):
         total = days * 30  * (1 + tax)
         print("The total cost of renting a Toyota for", days, "days is $", total)
 
-days = int(input("Please enter the number of days you would like to rent the car for (20% tax): "))
 
-calculate_total_cost()
+def main():
+    choice = choose_car()
+    days = int(input("Please enter the number of days you would like to rent the car for (20% tax): "))
+    calculate_total_cost(days, choice)
 
-print("Thank you for using our car rental service!")
+    print("Thank you for using our car rental service!")    
+
+if __name__ == "__main__":
+    main()
