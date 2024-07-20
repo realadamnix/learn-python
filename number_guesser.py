@@ -30,6 +30,4 @@ while True:
         break
     else:
         print("incorrect (Please try again)")
-        User_guess = input()
-
-        User_guess = input()       
+        User_guess = input()    
