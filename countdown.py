@@ -14,7 +14,7 @@ print("please enter your time in seconds")
 time_input = int(input())
 
 if time_input < 0:
-    print("Please enter a positive integer") # this will make sure that the user enters a positive integer.
+    print("Please enter a positive integer") 
 
 
 # Start the countdown
