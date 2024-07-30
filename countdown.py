@@ -18,7 +18,7 @@ if time_input < 0:
 
 
 # Start the countdown
-print("time has started")
+print("You're timer has started")
 while time_input > -1: # this will take the time and subtract 1 from it until it reaches 0.
 
     print(time_input)
