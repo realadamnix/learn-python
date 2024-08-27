@@ -1,5 +1,8 @@
 """
-This program converts temperature from Fahrenheit to Celsius and vice versa. 
+Thos program converts temperature from Celsius to Fahrenheit and vice versa.
+The user is presented with a menu system that allows them to select the conversion they would like to perform.
+The program then prompts the user to enter the temperature they would like to convert and displays the result.
+Copyright: Adam Nix (2024)
 """
 
 
@@ -15,9 +18,11 @@ def menu_system():
     print("select 2 for °F to °C")
 
     while True:
-
-        choice = int(input("Please enter your choice: "))
-
+        try:
+            choice = int(input("Please enter your choice: "))
+        except ValueError:
+            print("Invalid choice (please select 1 or 2)")
+            continue                                                            
         if choice == 1:
             print("You have selected °C to °F")
             return celsius_to_fahrenheit()
