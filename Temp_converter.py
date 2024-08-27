@@ -38,7 +38,7 @@ def celsius_to_fahrenheit():
     Converts temperature from Celsius to Fahrenheit.
     """
     celsius = float(input("Please enter the temperature in Celsius: "))
-    fahrenheit = ((celsius * 9 / 5) + 32, 2)
+    fahrenheit = round((celsius * 9 / 5) + 32, 2)
     print("The temperature in Fahrenheit is", fahrenheit, "°F")
 
 
@@ -47,7 +47,7 @@ def fahrenheit_to_celsius():
     Converts temperature from Fahrenheit to Celsius.
     """
     fahrenheit = float(input("Please enter the temperature in Fahrenheit: "))
-    celsius = ((fahrenheit - 32) * 5 / 9, 2)
+    celsius = round((fahrenheit - 32) * 5 / 9, 2)
     print("The temperature in Celsius is", celsius, "°C")
 
 
